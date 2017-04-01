@@ -2,7 +2,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 	<c:import url="cabecalho.jsp"/>
-	<jsp:useBean id="dao" class="br.com.caelum.agenda.dao.ContatoDao" />
 	<table>
 		<thead>
 			<tr>
@@ -14,7 +13,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach items="${dao.lista}" var="contato" varStatus="id">
+			<c:forEach items="${contatos}" var="contato" varStatus="id">
 				<tr bgcolor="#${id.count % 2 == 0 ? 'aaee88' : 'ffffff' }">
 					<td>${id.count}</td>
 					<td>${contato.nome}</td>
@@ -31,6 +30,9 @@
 					<td>${contato.endereco}</td>
 					<td>
 						<fmt:formatDate value="${contato.dataNascimento.time}" pattern="dd/MM/yyyy"/>
+					</td>
+					<td>
+						<a href="mvc?logica=RemoveContatoLogic&id=${contato.id}">Remover</a>
 					</td>
 				</tr>
 			</c:forEach>

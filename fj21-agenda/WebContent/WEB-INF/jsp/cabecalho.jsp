@@ -7,22 +7,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="css/jquery.css" rel="stylesheet">
-<link href="css/tarefas.css" rel="stylesheet">
 <script src="js/jquery.js"></script>
 <script src="js/jquery-ui.js"></script>
 </head>
 <body>
-
-<c:import url="cabecalho.jsp"/>
-
-	<h1>Adiciona Contato</h1>
+	<img src="<c:url value="/imagens/caelum.png"/>" />
+	<h2>Agenda de Contatos do Rafael</h2>
 	<hr/>
-	<form action="adicionaContato" >
-		Nome: <input type="text" name="nome" /><br/>
-		Email: <input type="text" name="email" /><br/>
-		Endereço: <input type="text" name="endereco" /><br/>
-		Data de Nascimento: <caelum:campoData id="dataNascimento" /><br/>
-		
-		<input type="submit" value="Gravar"><br/>
-	</form>
-<c:import url="rodape.jsp"/>
